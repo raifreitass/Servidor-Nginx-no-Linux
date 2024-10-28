@@ -218,6 +218,9 @@ Adicione um repositório remoto e envie os commits:
 
 `cat nginx_online.log`
 
+![image](https://github.com/user-attachments/assets/a62e0c9a-cb65-4ef8-be0e-69282af597f0)
+
+
 Se o Nginx estiver ativo, o script apenas criará o arquivo `nginx_online.log`. Para verificar se o log `nginx_offline.log` será gerado, você pode parar o serviço do Nginx antes de executar o script:
 
 
@@ -233,6 +236,9 @@ Após parar o serviço, execute novamente o script:
 - Cheque o log de status inativo:
 
 `cat nginx_offline.log`
+
+![image](https://github.com/user-attachments/assets/264ad206-4aa1-4b27-af8b-cc69050d03e1)
+
 
 Para ativar o Nginx novamente, você pode usar o seguinte comando:
 
