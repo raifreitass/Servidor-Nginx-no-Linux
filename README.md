@@ -28,7 +28,7 @@ No PowerShell, digite o seguinte comando para instalar o WSL:
 - Quando finalizar a instalação, realize o seu login como solicitado na tela e anote sua senha, pois ela poderá ser solicitada em outros momentos.
 
 ## Passo 3
-Reinicie o computador, esse passo é importante para concluir a configuração do WSL. Após a reinicialização, verifique se o WSL está funcionando corretamente:
+Reinicie o computador para concluir a configuração do WSL. Após a reinicialização, verifique se o WSL está funcionando corretamente:
 
 `wsl -l -v`
 
