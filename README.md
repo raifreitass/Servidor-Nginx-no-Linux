@@ -122,7 +122,7 @@ Type=simple
 ExecStart=/bin/bash /home/seu_usuario/nome_do_seu_diretorio/checar_nginx.sh
 ````
 
-Salve e saia do editor (Ctrl + O, Enter, Ctrl + X).
+Salve e saia do modo editor (Ctrl + O, Enter, Ctrl + X).
 
 ## Passo 2 
 Agora, crie o arquivo de timer correspondente:
