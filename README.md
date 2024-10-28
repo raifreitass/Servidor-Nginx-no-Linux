@@ -57,7 +57,13 @@ Em seguida, instale o Nginx:
   
 `sudo systemctl status nginx`
 
+![image](https://github.com/user-attachments/assets/b27b0d4f-b615-4ba3-a544-33aefe5014b0)
+
+
 O status deve indicar "active (running)", mostrando que o servidor está em execução. Para confirmar, abra o navegador e acesse: http://localhost. 
+
+![image](https://github.com/user-attachments/assets/b7d56bf8-1409-49d1-8a8d-207313f6b48c)
+
 
 # *Validação do Status do Nginx*
 Precisamos de um script que irá verificar periodicamente se o Nginx está rodando.
@@ -82,7 +88,7 @@ Insira o seguinte código no script:
 #!/bin/bash
 
 CAMINHO_LOGS="./"
-TEMPO_ATUAL=$(date +'%d-%m-%Y')' '$(date +'%H:%M:%S')
+TEMPO_ATUAL=$(date +'%H:%M:%S %d-%m-%Y')
 SERVICO="nginx"
 
 if systemctl is-active --quiet "$SERVICO"; then
