@@ -182,7 +182,7 @@ Primeiramente, faça login com sua conta no GitHub pelo o terminal:
 - Copie o código.
 - Abra manualmente o navegador e vá para: https://github.com/login/device
 - Cole o código que você copiou e clique em Continue.
-- Siga as instruções para concluir a autenticação.
+
 
 ## Passo 2
 No diretório onde você criou o script, inicialize um repositório Git:
