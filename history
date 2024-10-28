@@ -1,0 +1,39 @@
+  115  mkdir nginx_service
+  116  cd nginx_service
+  117  ls
+  118  nano checar_nginx.sh
+  119  chmod +x checar_nginx.sh
+  120  sudo nano /etc/systemd/system/checar_nginx.service
+  121  sudo nano /etc/systemd/system/checar_nginx.timer
+  122  sudo systemctl enable checar_nginx.timer
+  123  sudo systemctl start checar_nginx.timer
+  124  systemctl list-timers
+  125  journalctl -u checar_nginx.service
+  126  journalctl -u nginx
+  127  cat nginx_online.log
+  128  ./checar_nginx.sh
+  129  cd ./
+  130  ls
+  131  cat nginx_online.log
+  132  cat nginx_offline.log
+  133  sudo systemctl stop nginx
+  134  ./checar_nginx.sh
+  135  ls
+  136  cat nginx_offline.log
+  137  sudo systemctl start nginx
+  138  sudo systemctl status nginx
+  139  cat nginx_online.log
+  140  systemctl list-timers
+  141  journalctl -u checar_nginx.service
+  142  git init
+  143  git add .
+  144  git commit -m "Commit do Projeto"
+  145  gh auth login
+  146  sudo apt  install gh  # version 2.45.0-1ubuntu0.1
+  147  gh auth login
+  148  gh auth status
+  149  git init
+  150  git add .
+  151  git commit -m "Commit do Projeto"
+  152  git remote add origin https://github.com/raifreitass/Servidor-Nginx-no-Linux.git
+  153  git push -u origin master
