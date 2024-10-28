@@ -50,11 +50,11 @@ Em seguida, instale o Nginx:
 
 `sudo apt install nginx`
 
-- Inicie serviço Nginx para que ele comece a rodar:
+- Inicie o Nginx para que ele comece a rodar:
 
 `sudo systemctl start nginx`
 
-* Para verificar se o Nginx está rodando corretamente, use:
+* Para verificar se o Nginx está funcionando corretamente, use:
   
 `sudo systemctl status nginx`
 
