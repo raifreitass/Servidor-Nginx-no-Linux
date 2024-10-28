@@ -101,30 +101,90 @@ Permita o funcionamento do script:
 
 `chmod +x checar_nginx.sh`
 
+- Este comando permite que o script ` checar_nginx.sh ` seja executado como um programa, garantindo que tenha as permissões necessárias para funcionar corretamente.
+
 # Automatização do Script
-Agora, você vai configurar o script para que ele seja executado automaticamente a cada 5 minutos utilizando a ferramenta `anacron`.
+Agora, você vai configurar o script para que ele seja executado automaticamente a cada 5 minutos utilizando a ferramenta `Systemd Timers`.
 
 ## Passo 1 
-O Anacron geralmente já vem instalado em muitas distribuições Linux, mas você pode instalá-lo se necessário:
+Crie um arquivo de serviço para o seu script executando o comando:
 
-- Instalação:
-`sudo apt install anacron`
+`sudo nano /etc/systemd/system/checar_nginx.service`
 
-- Configuração:
-`sudo nano /etc/anacrontab`
+- Adicione o seguinte conteúdo ao arquivo:
+```
+[Unit]
+Description=Script para checar o status do Nginx
 
+[Service]
+Type=simple
+ExecStart=/bin/bash /home/seu_usuario/nome_do_seu_diretorio/checar_nginx.sh
+````
 
-- Arraste o cursor de texto até o final da página e adicione essa linha ao arquivo para agendar seu script:
+Salve e saia do editor (Ctrl + O, Enter, Ctrl + X).
 
-`5       10      cron.daily     /home/seu_usuario/nome_do_seu_diretorio/checar_nginx.sh`
+## Passo 2 
+Agora, crie o arquivo de timer correspondente:
 
-Por fim, salve a edição para retornar na tela inicial do terminal.
+`sudo nano /etc/systemd/system/checar_nginx.timer`
+
+- Adicione este conteúdo ao arquivo:
+
+```
+ [Unit]
+Description=Timer para o script de checar o Nginx
+
+[Timer]
+OnBootSec=5min
+OnUnitActiveSec=5min
+Unit=checar_nginx.service
+
+[Install]
+WantedBy=timers.target
+````
+Salve novamente para sair do modo edição.
+
+## Passo 3
+Ativar e Iniciar o Timer: 
+
+`sudo systemctl enable checar_nginx.timer
+`
+
+- Inicie o timer:
+  
+`sudo systemctl start checar_nginx.timer
+`
+
+- Verificar o Status do Timer:
+  
+`systemctl list-timers
+`
+
+- Verificar os Logs:
+  
+`journalctl -u checar_nginx.service
+`
+
 
 # Versionamento com Git
 Nesta última etapa, vamos versionar o projeto utilizando o Git.
 
 ## Passo 1
-- No diretório onde você criou o script, inicialize um repositório Git:
+Primeiramente, faça login com sua conta no GitHub pelo o terminal:
+
+`gh auth login
+`
+- Selecione GitHub.com como a conta que você deseja acessar.
+- Escolha HTTPS.
+- Confirme que deseja autenticar o Git digitando "y".
+- Selecione Login with a web browser.
+- Copie o código.
+- Abra manualmente o navegador e vá para: https://github.com/login/device
+- Cole o código que você copiou e clique em Continue.
+- Siga as instruções para concluir a autenticação.
+
+## Passo 2
+No diretório onde você criou o script, inicialize um repositório Git:
 
 `git init`
 
@@ -137,7 +197,7 @@ Nesta última etapa, vamos versionar o projeto utilizando o Git.
   
 `git commit -m "Commit do Projeto" `
 
-## Passo 2
+## Passo 3
 Adicione um repositório remoto e envie os commits:
 
 `git remote add origin https://github.com/seu_usuario/seu_repositorio.git`
