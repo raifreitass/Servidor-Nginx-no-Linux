@@ -20,12 +20,11 @@ No PowerShell, digite o seguinte comando para instalar o WSL:
 
  ` wsl --install `
 
-- Isso irá habilitar o WSL e, se necessário, baixar automaticamente uma distribuição Linux (normalmente o Ubuntu). Caso não instale o Ubuntu automaticamente, digite o comando: 
+- Depois dessa etapa, instale o terminal do Ubuntu com o comando: 
 
-`wsl --install -d Ubuntu-20.04`
+`wsl --install -d Ubuntu-22.04`
 
-- Se preferir uma versão mais recente, pode substituir o “20.04” por uma versão mais nova, como Ubuntu-22.04.
-- Quando finalizar a instalação, realize o seu login como solicitado na tela e anote sua senha, pois ela poderá ser solicitada em outros momentos.
+- Quando finalizar a instalação, realize o seu login como solicitado na tela e não esqueça sua senha, pois ela poderá ser solicitada em outros momentos.
 
 ## Passo 3
 Reinicie o computador para concluir a configuração do WSL. Após a reinicialização, verifique se o WSL está funcionando corretamente:
@@ -33,7 +32,7 @@ Reinicie o computador para concluir a configuração do WSL. Após a reinicializ
 `wsl -l -v`
 
 ## Passo 4
-Agora você pode abrir o terminal do Ubuntu pesquisando por ele diretamente na barra de pesquisa ou, se preferir, abra novamente o PowerShell e digite o comando:
+Agora você pode abrir o terminal do Ubuntu pesquisando por ele na barra de pesquisa ou, se preferir, abra novamente o PowerShell e digite o comando:
 
 `wsl`
 
