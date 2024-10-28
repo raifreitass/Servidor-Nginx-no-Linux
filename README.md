@@ -1,5 +1,5 @@
 # Serviço Nginx no Ubuntu via WSL 
-
+## Etapas:
 1. Linux no Windows (WSL)
 2. Subindo um Servidor Nginx
 3. Validação do Status do Nginx
