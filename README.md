@@ -59,7 +59,7 @@ Em seguida, instale o Nginx:
   
 `sudo systemctl status nginx`
 
-O status deve mostrar "active (running)", indicando que o servidor está online. Verifique se o servidor está funcionando acessando o endereço http://localhost no navegador. Se tudo estiver certo, você verá a página de boas-vindas do Nginx.
+O status deve indicar "active (running)", mostrando que o servidor está em execução. Para confirmar, abra o navegador e acesse http://localhost. 
 
 # *Validação do Status do Nginx*
 Precisamos de um script que irá verificar periodicamente se o Nginx está rodando.
