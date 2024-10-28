@@ -39,7 +39,7 @@ Agora você pode abrir o terminal do Ubuntu pesquisando por ele diretamente na b
 `wsl`
 
 # *Subindo um Servidor Nginx*
-Vamos proceder com a instalação do Nginx, um dos servidores web mais populares e amplamente utilizados.
+Vamos proceder com a instalação do Nginx.
 
 ## Passo 1
 Com o terminal aberto, atualize os pacotes do Ubuntu digitando o comando:
@@ -69,11 +69,13 @@ Crie um diretório onde você deseja alocar o script:
 
  ` mkdir nome_do_seu_diretorio `
  
+ 
 Navegue até ele e inicie a criação do arquivo do script, usando o editor ` nano `:
 
 1. ` cd nome_do_seu_diretorio `
    
 2. ` nano checar_nginx.sh `
+   
 
 ## Passo 2
 Insira o seguinte código no script:
@@ -98,11 +100,10 @@ fi
 - Aperte CTRL + O, ENTER e CTRL + X para salvar o script e sair da edição.
 
 ## Passo 3
-Permita o funcionamento do script:
+Permita o funcionamento do script para ser executado como um programa:
 
 `chmod +x checar_nginx.sh`
 
-- Este comando permite que o script ` checar_nginx.sh ` seja executado como um programa, garantindo que tenha as permissões necessárias para funcionar corretamente.
 
 # *Automatização do Script*
 Agora, você vai configurar o script para que ele seja executado automaticamente a cada 5 minutos utilizando a ferramenta `Systemd Timers`.
