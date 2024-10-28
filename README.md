@@ -183,7 +183,8 @@ Primeiramente, faça login com sua conta no GitHub pelo o terminal:
 - Abra manualmente o navegador e vá para: https://github.com/login/device
 - Cole o código que você copiou e clique em Continue.
 
-  Pronto, você já autenticou seu GitHub no terminal.
+
+*Pronto, você já autenticou seu GitHub no terminal.*
 
 
 ## Passo 2
