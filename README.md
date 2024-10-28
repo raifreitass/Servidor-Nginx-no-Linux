@@ -6,6 +6,7 @@
 3. Validação do Status do Nginx
 4. Automatização do Script
 5. Versionamento com Git
+6. Verificação do Projeto
 
 
 
@@ -103,7 +104,7 @@ Permita o funcionamento do script:
 
 - Este comando permite que o script ` checar_nginx.sh ` seja executado como um programa, garantindo que tenha as permissões necessárias para funcionar corretamente.
 
-# Automatização do Script
+# *Automatização do Script*
 Agora, você vai configurar o script para que ele seja executado automaticamente a cada 5 minutos utilizando a ferramenta `Systemd Timers`.
 
 ## Passo 1 
@@ -166,7 +167,7 @@ Ativar e Iniciar o Timer:
 `
 
 
-# Versionamento com Git
+# *Versionamento com Git*
 Nesta última etapa, vamos versionar o projeto utilizando o Git.
 
 ## Passo 1
@@ -203,6 +204,37 @@ Adicione um repositório remoto e envie os commits:
 `git remote add origin https://github.com/seu_usuario/seu_repositorio.git`
 
 `git push -u origin master`
+
+# *Verificação do Projeto*
+- Cheque o log de status ativo:
+
+`cat nginx_online.log`
+
+- Se o Nginx estiver ativo, o script apenas criará o arquivo nginx_online.log. Para verificar se o log nginx_offline.log será gerado, você pode parar o serviço do Nginx antes de executar o script:
+
+`sudo systemctl stop nginx
+`
+
+- Após parar o serviço, execute novamente o script:
+
+`./checar_nginx.sh
+`
+
+- Cheque o log de status inativo:
+
+`cat nginx_offline.log`
+
+Para ativar o Nginx novamente, você pode usar o seguinte comando:
+
+`sudo systemctl start nginx
+`
+
+
+
+
+
+
+
 
 
 
