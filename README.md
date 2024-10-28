@@ -215,6 +215,8 @@ Adicione um repositório remoto e envie os commits:
 
 Se o Nginx estiver ativo, o script apenas criará o arquivo `nginx_online.log`. Para verificar se o log `nginx_offline.log` será gerado, você pode parar o serviço do Nginx antes de executar o script:
 
+
+
 `sudo systemctl stop nginx
 `
 
