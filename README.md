@@ -10,13 +10,12 @@
 
 
 # *Linux no Windows (WSL)*
-O WSL é um subsistema Linux dentro do Windows, que permite rodar comandos e programas de Linux sem precisar instalar o sistema operacional em outra partição.
 
 ## Passo 1
 Digite "Windows PowerShell" na barra de pesquisa do gerenciador de tarefas, clique no item com o botão direito do mouse e execute como administrador.
 
 ## Passo 2
-No PowerShell, digite o seguinte comando para instalar o WSL:
+Digite o seguinte comando para instalar o WSL:
 
  ` wsl --install `
 
@@ -53,14 +52,14 @@ Em seguida, instale o Nginx:
 
 `sudo systemctl start nginx`
 
-* Para verificar se o Nginx está funcionando corretamente, use:
+* Use esse comando para confirmar se o Nginx está sendo executado perfeitamente:
   
 `sudo systemctl status nginx`
 
 ![image](https://github.com/user-attachments/assets/b27b0d4f-b615-4ba3-a544-33aefe5014b0)
 
 
-O status deve indicar "active (running)", mostrando que o servidor está em execução. Para confirmar, abra o navegador e acesse: http://localhost. 
+Para confirmar se tudo está ok, abra o navegador e acesse: http://localhost. 
 
 ![image](https://github.com/user-attachments/assets/b7d56bf8-1409-49d1-8a8d-207313f6b48c)
 
