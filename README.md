@@ -175,15 +175,25 @@ Ativar e Iniciar o Timer:
 Nesta última etapa, vamos versionar o projeto utilizando o Git.
 
 ## Passo 1
-Primeiramente, faça login com sua conta no GitHub pelo o terminal:
+- Primeiramente, você irá precisar instalar o GitHub CLI, use esse comando:
+
+`sudo apt install gh
+`
+- Verifique a instalação:
+
+`gh --version
+`
+
+## Passo 2
+Depois, faça login com sua conta no GitHub pelo o terminal:
 
 `gh auth login
 `
 - Selecione GitHub.com como a conta que você deseja acessar.
-- Escolha HTTPS.
+- Escolha o método HTTPS ao invés de SSH.
 - Confirme que deseja autenticar o Git digitando "y".
-- Selecione Login with a web browser.
-- Copie o código.
+- Selecione "Login with a web browser" para realizar a autenticação pelo navegador.
+- Copie o código que será exibido no terminal.
 - Abra manualmente o navegador e vá para: https://github.com/login/device
 - Cole o código que você copiou e clique em Continue.
 
@@ -196,7 +206,7 @@ Agora, verifique seu login com o comando:
 *Pronto, você já autenticou seu GitHub no terminal.*
 
 
-## Passo 2
+## Passo 3
 No diretório onde você criou o script, inicialize um repositório Git:
 
 `git init`
@@ -210,7 +220,7 @@ No diretório onde você criou o script, inicialize um repositório Git:
   
 `git commit -m "Commit do Projeto" `
 
-## Passo 3
+## Passo 4
 Adicione um repositório remoto e envie os commits:
 
 `git remote add origin https://github.com/seu_usuario/seu_repositorio.git`
