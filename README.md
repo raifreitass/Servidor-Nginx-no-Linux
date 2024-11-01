@@ -95,7 +95,7 @@ if systemctl is-active --quiet "$SERVICO"; then
     echo "$TEMPO_ATUAL - $SERVICO - STATUS: Ativo - Executando." >> "${CAMINHO_LOGS}/nginx_online.log"
 else
 
-    echo "TEMPO_ATUAL - $SERVICO - STATUS: Desativo - Não está sendo executado." >> "${CAMINHO_LOGS}/nginx_offline.log"
+    echo "$TEMPO_ATUAL - $SERVICO - STATUS: Desativo - Não está sendo executado." >> "${CAMINHO_LOGS}/nginx_offline.log"
 fi
 
 
@@ -256,8 +256,6 @@ Após parar o serviço, execute novamente o script:
 
     
 `cat nginx_offline.log`
-
-![image](https://github.com/user-attachments/assets/264ad206-4aa1-4b27-af8b-cc69050d03e1)
 
 
 > Para ativar o Nginx novamente, você pode usar o seguinte comando: `sudo systemctl start nginx
