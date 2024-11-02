@@ -91,12 +91,11 @@ TEMPO_ATUAL=$(date +'%H:%M:%S %d-%m-%Y')
 SERVICO="nginx"
 
 if systemctl is-active --quiet "$SERVICO"; then
-
     echo "$TEMPO_ATUAL - $SERVICO - STATUS: Ativo - Executando." >> "${CAMINHO_LOGS}/nginx_online.log"
 else
-
     echo "$TEMPO_ATUAL - $SERVICO - STATUS: Desativo - Não está sendo executado." >> "${CAMINHO_LOGS}/nginx_offline.log"
 fi
+
 
 
 ````
@@ -109,66 +108,29 @@ Permita o funcionamento do script para ser executado como um programa:
 
 
 # *Automatização do Script*
-Agora, você vai configurar o script para que ele seja executado automaticamente a cada 5 minutos utilizando a ferramenta `Systemd Timers`.
+Agora, você vai configurar o script para que ele seja executado automaticamente a cada 5 minutos utilizando a ferramenta `CRON`.
 
-## Passo 1 
-Crie um arquivo de serviço para o seu script executando o comando:
+## Passo 1
+Abra o crontab para edição com o comando:
 
-`sudo nano /etc/systemd/system/checar_nginx.service`
+``
+crontab -e
+``
 
-- Adicione o seguinte conteúdo ao arquivo:
-```
-[Unit]
-Description=Script para checar o status do Nginx
+## Passo 2
+Adicione a seguinte linha ao final do arquivo para agendar a execução do seu script a cada 5 minutos:
 
-[Service]
-Type=simple
-ExecStart=/bin/bash /home/seu_usuario/nome_do_seu_diretorio/checar_nginx.sh
-````
-
-Salve e saia do modo editor (Ctrl + O, Enter, Ctrl + X).
-
-## Passo 2 
-Agora, crie o arquivo de timer correspondente:
-
-`sudo nano /etc/systemd/system/checar_nginx.timer`
-
-- Adicione este conteúdo ao arquivo:
-
-```
- [Unit]
-Description=Timer para o script de checar o Nginx
-
-[Timer]
-OnBootSec=5min
-OnUnitActiveSec=5min
-Unit=checar_nginx.service
-
-[Install]
-WantedBy=timers.target
-````
-Salve novamente para sair do modo edição.
-
-## Passo 3
-Ativar e Iniciar o Timer: 
-
-`sudo systemctl enable checar_nginx.timer
+`*/5 * * * * /bin/bash /home/seu_usuario/nome_do_seu_diretorio/checar_nginx.sh
 `
 
-- Inicie o timer:
-  
-`sudo systemctl start checar_nginx.timer
+- Salve e saia do editor.
+
+## Passo 3 
+Verifique se o cron job foi adicionado corretamente:
+
+`crontab -l
 `
 
-- Verificar o Status do Timer:
-  
-`systemctl list-timers
-`
-
-- Verificar os Logs:
-  
-`journalctl -u checar_nginx.service
-`
 
 
 # *Versionamento com Git*
@@ -232,11 +194,6 @@ Adicione um repositório remoto e envie os commits:
 
 `cat nginx_online.log`
 
-![image](https://github.com/user-attachments/assets/a62e0c9a-cb65-4ef8-be0e-69282af597f0)
-
-
-
-
 > Se o Nginx estiver ativo, o script apenas criará o arquivo `nginx_online.log`.
 
 > Para verificar se o log `nginx_offline.log` será gerado, você pode parar o serviço do Nginx antes de executar o script:
@@ -258,7 +215,7 @@ Após parar o serviço, execute novamente o script:
 `cat nginx_offline.log`
 
 
-> Para ativar o Nginx novamente, você pode usar o seguinte comando: `sudo systemctl start nginx
+> Para ativar o Nginx novamente, use o comando: `sudo systemctl start nginx
 `
 
 
