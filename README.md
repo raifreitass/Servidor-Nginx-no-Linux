@@ -7,7 +7,12 @@
 5. Versionamento com Git
 6. Verificação do Projeto
 
+## Tecnologias Utilizadas
 
+- Sistema Operacional: WSL, Ubuntu 22.04
+- Servidor Web: Nginx
+- Automação: Shell Script, Cron, Systemd
+- Versionamento: Git, GitHub CLI
 
 # *Linux no Windows (WSL)*
 
