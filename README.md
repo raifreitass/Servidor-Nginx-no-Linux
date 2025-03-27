@@ -11,7 +11,7 @@
 
 - Sistema Operacional: WSL, Ubuntu 22.04
 - Servidor Web: Nginx
-- Automação: Shell Script, Cron, Systemd
+- Automação: Shell Script, Cron
 - Versionamento: Git, GitHub CLI
 
 # *Linux no Windows (WSL)*
